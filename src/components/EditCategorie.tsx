@@ -2,7 +2,7 @@ import { Button, Label, Modal, Textarea, TextInput } from "flowbite-react";
 import type { FC } from "react";
 import { useState } from "react";
 import { HiOutlinePencilAlt, HiUpload } from "react-icons/hi";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 
 export const EditCategorie: FC = function ({ data, refresh, updateUrl }) {
   const [isOpen, setOpen] = useState(false);

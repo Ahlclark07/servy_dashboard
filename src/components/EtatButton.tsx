@@ -2,7 +2,7 @@ import { Button, Modal } from "flowbite-react";
 import type { FC } from "react";
 import { useState } from "react";
 import { HiOutlineExclamationCircle, HiOutlinePencilAlt } from "react-icons/hi";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 
 export const EtatButton: FC = function ({ id, refresh, type, etat }) {
   const [isOpen, setOpen] = useState(false);

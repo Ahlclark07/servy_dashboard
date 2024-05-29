@@ -6,8 +6,8 @@ import { useEffect, useState } from "react";
 import NavbarSidebarLayout from "../layouts/navbar-sidebar";
 import { Pagination } from "../components/Pagination";
 import { MyTable } from "../components/MyTableClient";
-
-export const apiUrl = "http://localhost:300/";
+const apiUrl = process.env["API_URL"];
+console.log(apiUrl);
 const Vendeurs: FC = function () {
   const [clientListe, setclientListe] = useState([]);
   const [checkedRow, setCheckedRow] = useState([]);
@@ -47,7 +47,13 @@ const Vendeurs: FC = function () {
   };
   useEffect(() => {
     fetchData();
-    console.log("Test");
+    console.log(
+      apiUrl +
+        "admin/getUsers/vendeur/" +
+        (query == "" ? " " : query) +
+        "/" +
+        skip
+    );
   }, [query]);
 
   const updateSkip = (value) => {

@@ -1,8 +1,7 @@
 import { Button, Label, Modal, TextInput } from "flowbite-react";
 import type { FC } from "react";
 import { useState } from "react";
-import { HiOutlineExclamationCircle, HiOutlinePencilAlt } from "react-icons/hi";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 import { FaRegEye } from "react-icons/fa";
 
 export const VoirLeClient: FC = function ({ user, refresh }) {

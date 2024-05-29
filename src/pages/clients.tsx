@@ -7,8 +7,7 @@ import { HiTrash, HiUpload } from "react-icons/hi";
 import NavbarSidebarLayout from "../layouts/navbar-sidebar";
 import { Pagination } from "../components/Pagination";
 import { MyTable } from "../components/MyTableClient";
-
-export const apiUrl = "http://localhost:300/";
+const apiUrl = process.env["API_URL"];
 const Clients: FC = function () {
   const [clientListe, setclientListe] = useState([]);
   const [checkedRow, setCheckedRow] = useState([]);

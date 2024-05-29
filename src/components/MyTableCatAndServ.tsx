@@ -1,6 +1,6 @@
 import { Checkbox, Table } from "flowbite-react";
 import type { FC } from "react";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 import { EditCategorie } from "./EditCategorie";
 import { DeleteButton, DeleteCategorie } from "./DeleteButton";
 import { EtatButton } from "./EtatButton";
@@ -60,7 +60,13 @@ export const MyTable: FC = function ({
               <Table.Cell className="whitespace-nowrap p-4 text-base font-medium text-gray-900 dark:text-white">
                 <img
                   className="h-20"
-                  src={apiUrl + "uploads/images/" + type + "s/" + cat.image}
+                  src={(
+                    apiUrl +
+                    "uploads/images/" +
+                    type +
+                    "s/" +
+                    cat.image
+                  ).toLowerCase()}
                   alt={cat.nom}
                 />
               </Table.Cell>

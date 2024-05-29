@@ -1,7 +1,7 @@
 import { Button, Label, Modal, TextInput, Textarea } from "flowbite-react";
 import type { FC } from "react";
 import { useState } from "react";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 import { FaRegEye } from "react-icons/fa";
 
 export const VoirLaDemande: FC = function ({ user, refresh }) {

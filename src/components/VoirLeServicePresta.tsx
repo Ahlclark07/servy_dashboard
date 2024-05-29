@@ -1,10 +1,11 @@
 import { Button, Label, Modal, TextInput, Textarea } from "flowbite-react";
 import type { FC } from "react";
 import { useState } from "react";
-import { apiUrl } from "../pages/categories";
+
 import { FaRegEye } from "react-icons/fa";
 
 export const VoirLeServicePresta: FC = function ({ service, refresh }) {
+  const apiUrl = process.env["API_URL"];
   const [isOpen, setOpen] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -20,6 +21,7 @@ export const VoirLeServicePresta: FC = function ({ service, refresh }) {
     console.log(formData.get("id"));
     console.log(formData.get("message"));
     console.log(formData.get("decision"));
+
     fetch(apiUrl + "admin/updateServicePrestataireState/", {
       method: "post",
       body: formData,
@@ -61,17 +63,17 @@ export const VoirLeServicePresta: FC = function ({ service, refresh }) {
               Médias (images et audio) :
             </div>
             <div className="mt-6">
-              {service.audio ? (
+              {service.vocal ? (
                 <a
                   target="about:blank"
                   className="underline text-blue-600 block"
                   href={
                     apiUrl +
                     "uploads/audios/servicesprestataires/" +
-                    service.audio
+                    service.vocal
                   }
                 >
-                  Lien de la photo de profil
+                  Lien de l'audio du service
                 </a>
               ) : null}
 

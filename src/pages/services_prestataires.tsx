@@ -14,8 +14,7 @@ import { HiTrash } from "react-icons/hi";
 import NavbarSidebarLayout from "../layouts/navbar-sidebar";
 import { Pagination } from "../components/Pagination";
 import { MyTable } from "../components/MyTableServPresta";
-
-export const apiUrl = "http://localhost:300/";
+const apiUrl = process.env["API_URL"];
 const ServicesPrestatairesPage: FC = function () {
   const [catList, setCatList] = useState([]);
   const [typeQuery, setTypeQuery] = useState("type");

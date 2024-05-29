@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Button, Label, Modal, Textarea, TextInput } from "flowbite-react";
 import type { FC } from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { HiTrash, HiUpload } from "react-icons/hi";
 import NavbarSidebarLayout from "../layouts/navbar-sidebar";
 import { Pagination } from "../components/Pagination";
 import { MyTable } from "../components/MyTableCatAndServ";
-
-export const apiUrl = "http://localhost:300/";
+const apiUrl = process.env["API_URL"];
 const CategoriesPage: FC = function () {
   const [catList, setCatList] = useState([]);
   const [checkedRow, setCheckedRow] = useState([]);

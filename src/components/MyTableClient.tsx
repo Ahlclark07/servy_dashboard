@@ -1,6 +1,6 @@
 import { Checkbox, Table } from "flowbite-react";
 import type { FC } from "react";
-import { apiUrl } from "../pages/categories";
+const apiUrl = process.env["API_URL"];
 import { VoirLaDemande } from "./VoirLaDemande";
 import { VoirLeClient } from "./VoirLeClient";
 

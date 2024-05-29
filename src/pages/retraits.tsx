@@ -8,7 +8,6 @@ import NavbarSidebarLayout from "../layouts/navbar-sidebar";
 import { Pagination } from "../components/Pagination";
 import { MyTable } from "../components/MyTableClient";
 
-export const apiUrl = "http://localhost:300/";
 const UtilsateursEnTransition: FC = function () {
   const [clientListe, setclientListe] = useState([]);
   const [checkedRow, setCheckedRow] = useState([]);
